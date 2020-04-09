@@ -3,6 +3,7 @@ use ${DB};
 
 drop table if exists region;
 
-create table region
+create external table region
 stored as ${FILE}
+LOCATION '${LOCATION}/region'
 as select distinct * from ${SOURCE}.region;

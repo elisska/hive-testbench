@@ -3,8 +3,9 @@ use ${DB};
 
 drop table if exists partsupp;
 
-create table partsupp
+create external table partsupp
 stored as ${FILE}
+LOCATION '${LOCATION}/partsupp'
 as select * from ${SOURCE}.partsupp
 cluster by PS_SUPPKEY
 ;
