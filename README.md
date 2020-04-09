@@ -43,13 +43,13 @@ All of these steps should be carried out on your Hadoop cluster.
 
 - Step 5: Generate and load the data.
 
-  The scripts ```tpcds-setup.sh``` and ```tpch-setup.sh``` generate and load data for TPC-DS and TPC-H, respectively. General usage is ```tpcds-setup.sh scale_factor [directory]``` or ```tpch-setup.sh scale_factor [directory]```
+  The scripts ```tpcds-setup.sh``` and ```tpch-setup.sh``` generate and load data for TPC-DS and TPC-H, respectively. General usage is ```tpcds-setup.sh scale_factor [directory]``` or ```tpch-setup.sh scale_factor directory```
 
   Some examples:
 
   Build 1 TB of TPC-DS data: ```./tpcds-setup.sh 1000```
 
-  Build 1 TB of TPC-H data: ```./tpch-setup.sh 1000```
+  Build 1 TB of TPC-H data: ```./tpch-setup.sh 1000 gs://some-bucket```
 
   Build 100 TB of TPC-DS data: ```./tpcds-setup.sh 100000```
 
