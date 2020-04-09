@@ -3,7 +3,7 @@ use ${DB};
 
 drop table if exists partsupp;
 
-create external table partsupp
+create table partsupp
 stored as ${FILE}
 LOCATION '${LOCATION}/partsupp'
 as select * from ${SOURCE}.partsupp

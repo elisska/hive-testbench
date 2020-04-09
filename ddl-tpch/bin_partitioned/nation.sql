@@ -3,7 +3,7 @@ use ${DB};
 
 drop table if exists nation;
 
-create external table nation
+create table nation
 stored as ${FILE}
 LOCATION '${LOCATION}/nation'
 TBLPROPERTIES('orc.bloom.filter.columns'='*','orc.compress'='ZLIB')

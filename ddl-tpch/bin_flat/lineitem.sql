@@ -3,7 +3,7 @@ use ${DB};
 
 drop table if exists lineitem;
 
-create external table lineitem
+create table lineitem
 stored as ${FILE}
 LOCATION '${LOCATION}/lineitem'
 as select * from ${SOURCE}.lineitem 

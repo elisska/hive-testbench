@@ -3,7 +3,7 @@ use ${DB};
 
 drop table if exists supplier;
 
-create external table supplier
+create table supplier
 stored as ${FILE}
 LOCATION '${LOCATION}/supplier'
 as select * from ${SOURCE}.supplier

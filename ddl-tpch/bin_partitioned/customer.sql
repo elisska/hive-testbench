@@ -3,7 +3,7 @@ use ${DB};
 
 drop table if exists customer;
 
-create external table customer
+create table customer
 stored as ${FILE}
 LOCATION '${LOCATION}/customer'
 TBLPROPERTIES('orc.bloom.filter.columns'='*','orc.compress'='ZLIB')

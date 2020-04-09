@@ -3,7 +3,7 @@ use ${DB};
 
 drop table if exists region;
 
-create external table region
+create table region
 stored as ${FILE}
 LOCATION '${LOCATION}/region'
 TBLPROPERTIES('orc.bloom.filter.columns'='*','orc.compress'='ZLIB')

@@ -3,7 +3,7 @@ use ${DB};
 
 drop table if exists orders;
 
-create external table orders
+create table orders
 stored as ${FILE}
 LOCATION '${LOCATION}/orders'
 as select * from ${SOURCE}.orders

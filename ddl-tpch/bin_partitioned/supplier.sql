@@ -3,7 +3,7 @@ use ${DB};
 
 drop table if exists supplier;
 
-create external table supplier
+create table supplier
 stored as ${FILE}
 LOCATION '${LOCATION}/supplier'
 TBLPROPERTIES('orc.bloom.filter.columns'='*','orc.compress'='ZLIB')

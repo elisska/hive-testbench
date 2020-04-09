@@ -3,7 +3,7 @@ use ${DB};
 
 drop table if exists partsupp;
 
-create external table partsupp
+create table partsupp
 stored as ${FILE}
 LOCATION '${LOCATION}/partsupp'
 TBLPROPERTIES('orc.bloom.filter.columns'='*','orc.compress'='ZLIB')
