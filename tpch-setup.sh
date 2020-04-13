@@ -65,7 +65,7 @@ echo "Loading text data into external tables."
 runcommand "hive -i settings/load-flat.sql -f ddl-tpch/bin_flat/alltables.sql -d DB=tpch_text_${SCALE} -d LOCATION=${DIR}/${SCALE}/text"
 
 NOOPTIMIZE=$3
-if [ "$NOOPTIMIZE" == "nooptimize" ]; then
+if [ "$NOOPTIMIZE" != "nooptimize" ]; then
 
 # Create the optimized tables.
 i=1
