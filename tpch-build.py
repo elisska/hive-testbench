@@ -1,8 +1,10 @@
 import subprocess
 import os
 
-basedir = os.getcwd()
+workingdir = os.getcwd()
+basedir = os.path.dirname(os.path.realpath(__file__))
 
+print (workingdir)
 print (basedir)
 
 os.chdir(basedir)
