@@ -48,7 +48,7 @@ fi
 
 # Do the actual data load.
 hdfs dfs -mkdir -p ${DIR}
-hdfs dfs -ls ${DIR}/${SCALE}/lineitem > /dev/null
+hdfs dfs -ls ${DIR}/${SCALE}/text/lineitem > /dev/null
 if [ $? -ne 0 ]; then
 	echo "Generating data at scale factor $SCALE."
 	(cd tpch-gen; hadoop jar target/*.jar -d ${DIR}/${SCALE}/text -s ${SCALE})
