@@ -64,6 +64,9 @@ echo "TPC-H text data generation complete."
 echo "Loading text data into external tables."
 runcommand "hive -i settings/load-flat.sql -f ddl-tpch/bin_flat/alltables.sql -d DB=tpch_text_${SCALE} -d LOCATION=${DIR}/${SCALE}/text"
 
+NOOPTIMIZE=$3
+if [ "$NOOPTIMIZE" == "nooptimize" ]; then
+
 # Create the optimized tables.
 i=1
 total=8
@@ -98,3 +101,5 @@ done
 hive -i settings/load-${SCHEMA_TYPE}.sql -f ddl-tpch/bin_${SCHEMA_TYPE}/analyze.sql --database ${DATABASE}; 
 
 echo "Data loaded into database ${DATABASE}."
+
+fi
